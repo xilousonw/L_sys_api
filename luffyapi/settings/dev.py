@@ -1,4 +1,10 @@
 #开发阶段的配置文件
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
+from .const import *
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -135,6 +141,9 @@ AUTH_USER_MODEL = 'user.user'
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER':'luffyapi.utils.exceptions.common_exception_handler',
+    'DEFAULT_THROTTLE_RATES':{
+        'sms':'1/m'  # key要跟类中的scop对应
+    }
 }
 
 #日志的配置
