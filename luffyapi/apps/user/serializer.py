@@ -118,3 +118,4 @@ class UserRegisterSerilaizer(serializers.ModelSerializer):
     def create(self, validated_data):
         user=models.User.objects.create_user(**validated_data)
         return user
+

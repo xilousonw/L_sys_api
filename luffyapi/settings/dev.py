@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'home',
-
+    'course',
 
     'user',
 ]
